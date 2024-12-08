@@ -1,6 +1,14 @@
-.ItemContent-container {
+.ItemContent-container h1 {
   font-family: "Source Code Pro", monospace;
   font-weight: normal;
+  font-size: 25px;
   text-transform: capitalize;
   color: white;
+  margin: 0px;
+  transition: all 0.4s;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.ItemContent-container h1:hover {
+  color: lime;
 }
