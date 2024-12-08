@@ -6,6 +6,9 @@ const UserInput = (props) => {
   const [valid, setValid] = useState(true);
   const dataHandler = (e) => {
     setUserData(e.target.value);
+    if (e.target.value.trim().length > 0) {
+      setValid(true);
+    }
     console.log("onChange: ", userData);
   };
   const submitHandler = (e) => {
@@ -20,7 +23,6 @@ const UserInput = (props) => {
     setUserData("");
     props.userInfoData(dataObject);
   };
-
   return (
     <div className="UserInput-container">
       <form onSubmit={submitHandler}>
@@ -34,6 +36,9 @@ const UserInput = (props) => {
         </div>
         <div className="button-container">
           <Button type="submit" />
+          <button type="button" onClick={props.clearAllHandler}>
+            Clear All
+          </button>
         </div>
       </form>
     </div>

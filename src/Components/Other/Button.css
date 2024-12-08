@@ -6,6 +6,7 @@
   font-family: sans-serif, monospace;
   border-radius: 5px;
   transition: all 0.6s;
+  border: none;
 }
 .Button-container button:hover {
   background-color: #cacaca;

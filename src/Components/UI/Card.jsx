@@ -7,23 +7,22 @@ const Card = () => {
   const deleteItemHandler = (itemToDelete) => {
     setUserData((prevItem) => {
       return prevItem.filter((item) => {
-        console.log(item.data !== itemToDelete, "TESTASDA");
         return item.data !== itemToDelete;
       });
     });
-    console.log(userData, "NEW ARRAY");
   };
   const userinfo = (data) => {
     setUserData((dataOfUser) => {
       return [...dataOfUser, data];
     });
-    console.log(userData, "ARR");
   };
-  console.log(userData, "asdasd");
+  const clearAllHandler = () => {
+    setUserData([]);
+  };
   return (
     <div className="Card-container">
       <div className="card_input-section">
-        <UserInput userInfoData={userinfo} />
+        <UserInput userInfoData={userinfo} clearAllHandler={clearAllHandler} />
       </div>
       <div className="notes-container">
         {userData.length === 0 ? (
