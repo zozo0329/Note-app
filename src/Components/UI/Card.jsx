@@ -6,8 +6,9 @@ const Card = () => {
   const [userData, setUserData] = useState([]);
   const deleteItemHandler = (itemToDelete) => {
     setUserData((prevItem) => {
-      prevItem.filter((item) => {
-        return item !== itemToDelete;
+      return prevItem.filter((item) => {
+        console.log(item.data !== itemToDelete, "TESTASDA");
+        return item.data !== itemToDelete;
       });
     });
     console.log(userData, "NEW ARRAY");
@@ -18,6 +19,7 @@ const Card = () => {
     });
     console.log(userData, "ARR");
   };
+  console.log(userData, "asdasd");
   return (
     <div className="Card-container">
       <div className="card_input-section">

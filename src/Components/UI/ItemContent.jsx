@@ -5,10 +5,7 @@ const ItemContent = (props) => {
   };
   return (
     <div className="ItemContent-container">
-      <h1 onClick={deleteHandler}>
-        {props.value}
-        {}
-      </h1>
+      <h1 onClick={deleteHandler}>{props.value}</h1>
     </div>
   );
 };
