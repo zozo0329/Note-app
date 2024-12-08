@@ -1,0 +1,16 @@
+.card_input-section {
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 5px 5px 10px black;
+  background: radial-gradient(
+    circle 1292px at -13.6% 51.7%,
+    #003844 0%,
+    #75ad8c 51.5%,
+    #c4c4c4 88.6%
+  );
+  transition: all 0.6s;
+}
+.card_input-section:hover {
+  transform: scale(1.1);
+  box-shadow: 8px 8px 15px black;
+}
