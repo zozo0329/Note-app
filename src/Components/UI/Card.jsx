@@ -4,10 +4,10 @@ import UserInput from "../UserInput/UserInput";
 import ItemContent from "./ItemContent";
 const Card = () => {
   const [userData, setUserData] = useState([]);
-  const deleteItemHandler = (itemToDelete) => {
+  const deleteItemHandler = (keyProp) => {
     setUserData((prevItem) => {
       return prevItem.filter((item) => {
-        return item.data !== itemToDelete;
+        return item.id !== keyProp;
       });
     });
   };
@@ -22,16 +22,17 @@ const Card = () => {
   return (
     <div className="Card-container">
       <div className="card_input-section">
-        <UserInput userInfoData={userinfo} clearAllHandler={clearAllHandler} />
+        <UserInput addHandler={userinfo} clearAllHandler={clearAllHandler} />
       </div>
       <div className="notes-container">
         {userData.length === 0 ? (
           <h1 className="dev-note">No notes at this time</h1>
         ) : (
-          userData.map((value, i) => {
+          userData.map((value) => {
             return (
               <ItemContent
-                key={i}
+                id={value.id}
+                key={value.id}
                 value={value.data}
                 onDelete={deleteItemHandler}
               />

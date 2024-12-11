@@ -19,9 +19,10 @@ const UserInput = (props) => {
     }
     const dataObject = {
       data: userData,
+      id: Math.random().toString(),
     };
     setUserData("");
-    props.userInfoData(dataObject);
+    props.addHandler(dataObject);
   };
   return (
     <div className="UserInput-container">

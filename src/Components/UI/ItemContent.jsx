@@ -1,7 +1,9 @@
 import "./ItemContent.css";
 const ItemContent = (props) => {
   const deleteHandler = () => {
-    props.onDelete(props.value);
+    props.onDelete(props.id);
+
+    console.log(props.value, "VALUE");
   };
   return (
     <div className="ItemContent-container">
